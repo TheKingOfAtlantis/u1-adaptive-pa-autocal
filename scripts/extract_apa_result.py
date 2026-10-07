@@ -2,11 +2,11 @@ import re
 import numpy as np
 
 # Fill with console output after running all APA_FINISH_CELL macros
-input = """
+console_output = """
 """
 
 pattern = r"([0-9.]+), ([0-9.]+), ([0-9.]+)"
-result = re.findall(pattern, input)
+result = re.findall(pattern, console_output)
 
 print("# Orca adaptive PA:")
 for line in result:

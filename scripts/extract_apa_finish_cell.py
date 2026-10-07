@@ -4,13 +4,13 @@ import re
 import numpy as np
 
 # Fill with console output
-input = """
+console_output = """
 
 """
 
 startMarker = "=== APA TEST POINT START ==="
 
-tests = input.split(startMarker)
+tests = console_output.split(startMarker)
 
 for test in tests[1:]:
     # Extract k/area lines
