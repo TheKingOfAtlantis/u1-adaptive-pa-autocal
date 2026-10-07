@@ -2,14 +2,24 @@
 
 import re
 import numpy as np
+import argparse
 
-# Fill with console output
-console_output = """
+p = argparse.ArgumentParser(
+    description="Generates necessary APA_FINISH_CELL from console output"
+)
+p.add_argument(
+    "file",
+    default=None,
+    help="File containing the console output from running APA_COIL_RUN_ALL",
+)
+args = p.parse_args()
 
-"""
+console_output = ""
+with open(args.file) as file:
+    console_output = file.readlines()
+    console_output = "\n".join(console_output)
 
 startMarker = "=== APA TEST POINT START ==="
-
 tests = console_output.split(startMarker)
 
 for test in tests[1:]:
